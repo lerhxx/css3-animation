@@ -1,8 +1,36 @@
+@import 'nib';
+@import '../../../common/css/common.styl';
+
 body
 	padding 0
 	margin 0
-wrapper
-	width 100px
-	height 100px
-	border 5px solid block
+.wrapper
+	relative()
+	width 200px
+	height 200px
+	margin 100px 100px
+	border 3px solid black
 	border-radius 50%
+#hour,
+#min,
+#sec
+	absolute(bottom 50% left 50%)
+	width 5px
+	transform-origin 50% 100%
+#hour	
+	height 25%
+	background red
+#min
+	height 30%
+	background skyblue
+#sec
+	height 40%
+	background pink
+.num-wrapper
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12
+		span:nth-child({i})
+			transform rotate(30 * i deg) translateX(-7px)
+	span
+		absolute(top 0 left 100px)
+		transform-origin 0 100px
+	
